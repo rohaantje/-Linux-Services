@@ -1,11 +1,13 @@
 #!/bin/bash 
+#
+# Based on https://forums.cacti.net/viewtopic.php?t=38633
 
 MySQLCactiUser="cacti" 			# MYSQL user for cacti database
 MySQLCactiPwd="cacti" 			# Password for the MYSQL user defined above
 SystemCactiUser="cacti" 		# Linux user running cacti
 MySQLRootPwd="root" 			# Password for MYSQL user "root"
 CactiVersion="1.1.27" 			# Cacti version to be installed
-SettingsVersion="0.71" 			# Settings plugin version to be installed
+SettingsVersion="0.71-1" 			# Settings plugin version to be installed
 SyslogVersion="1.22-2"			# Syslog plugin version to be installed
 
 echo -e "##Installing cacti tools##"
@@ -35,7 +37,7 @@ rm -f /usr/src/cacti-$CactiVersion.tar.gz
 echo -e "##Installing settings plugins##"
 logger installing settings plugings
 cd /usr/src/
-wget http://docs.cacti.net/_media/plugin:settings-v$SettingsVersion.tgz
+wget https://docs.cacti.net/_media/plugin:settings-v$SettingsVersion.tgz
 mv plugin\:settings-v$SettingsVersion.tgz settings-v$SettingsVersion.tgz
 tar zxvf ./settings-v$SettingsVersion.tgz
 mv /usr/src/settings/ /var/www/cacti/plugins/
@@ -44,8 +46,8 @@ rm -f /usr/src/settings-v$SettingsVersion.tgz
 echo -e "##Installing syslog plugins##"
 logger installing syslog plugings
 cd /usr/src/
-wget http://docs.cacti.net/_media/plugin:syslog-v$syslogVersion.tgz
-mv plugin\:syslog-v$syslogVersion.tgz syslog-v$syslogVersion.tgz
-tar zxvf ./syslog-v$syslogVersion.tgz
+wget https://docs.cacti.net/_media/plugin:syslog-v$SyslogVersion.tgz
+mv plugin\:syslog-v$SyslogVersion.tgz syslog-v$SyslogVersion.tgz
+tar zxvf ./syslog-v$SyslogVersion.tgz
 mv /usr/src/syslog/ /var/www/cacti/plugins/
-rm -f /usr/src/syslog-v$syslogVersion.tgz
+rm -f /usr/src/syslog-v$SyslogVersion.tgz
