@@ -7,10 +7,8 @@ MySQLCactiPwd="cacti" 			# Password for the MYSQL user defined above
 SystemCactiUser="cacti" 		# Linux user running cacti
 MySQLRootPwd="root" 			# Password for MYSQL user "root"
 CactiVersion="1.1.27" 			# Cacti version to be installed
-SettingsVersion="0.71-1" 			# Settings plugin version to be installed
+SettingsVersion="0.71-1" 		# Settings plugin version to be installed
 SyslogVersion="1.22-2"			# Syslog plugin version to be installed
-
-echo "GRANT SELECT ON mysql.time_zone_name TO cacti@localhost IDENTIFIED BY 'cacti';" | mysql -u root -proot mysql
 
 echo -e "##Installing cacti tools##"
 logger installing rrdtool snmp snmpd
