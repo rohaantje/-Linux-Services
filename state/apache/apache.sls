@@ -1,2 +1,2 @@
-snmp:
+apache:
     pkg.installed

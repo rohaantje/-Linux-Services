@@ -1,4 +1,0 @@
-netntp:
-    pkg.installed
-	
-	

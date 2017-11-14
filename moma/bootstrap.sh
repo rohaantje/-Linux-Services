@@ -11,7 +11,7 @@ logger clone git and enter dir
 git clone https://github.com/rohaantje/-Linux-Services.git
 cd ./-Linux-Services/
 rmdir /minion
-mv /state /svr/salt/
+mv state /srv/salt/
 cd /moma
 
 echo -e "##running install scripts##"
