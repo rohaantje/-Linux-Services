@@ -12,7 +12,7 @@ echo -e "##Installing MySQL##"
 logger installing MySQL
 echo 'mysql-server mysql-server/root_password password root' | sudo debconf-set-selections
 echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections
-sudo apt -y install mysql-server php5.6-mysql
+sudo apt -y install mysql-server php-mysql
 
 echo -e "##restart apache2##"
 logger restart apache2
