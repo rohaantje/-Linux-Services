@@ -4,9 +4,9 @@ echo -e "##Installing apache2##"
 logger installing apache2
 sudo apt -y install apache2
 
-echo -e "##Installing PHP5##"
-logger installing PHP5
-sudo apt -y install php5.6 php5.6-gd php5.6-cli
+echo -e "##Installing PHP##"
+logger installing PHP
+sudo apt -y install libapache2-mod-php php php-gd php-cli
 
 echo -e "##Installing MySQL##"
 logger installing MySQL
