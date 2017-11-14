@@ -26,7 +26,7 @@ echo "GRANT ALL ON cacti.* TO $MySQLCactiUser@localhost IDENTIFIED BY '$MySQLCac
 mysql -u $MySQLCactiUser -p$MySQLCactiPwd cacti < /var/www/html/cacti/cacti.sql
 cd /var/www/html/cacti/include/
 sed -i -e "s/username = 'cactiuser'/username = '"$MySQLCactiUser"'/" config.php
-sed -i -e "s/password = 'cactiuser'/password = '"$MySQLCactiPwd"'/" config.phpcd
+sed -i -e "s/password = 'cactiuser'/password = '"$MySQLCactiPwd"'/" config.php
 useradd $SystemCactiUser -g www-data -d /var/www/html/cacti -s /bin/false
 chown -R $SystemCactiUser:www-data /var/www/html/cacti/rra/ /var/www/html/cacti/log/
 chmod -R 770 /var/www/html/cacti/rra/ /var/www/html/cacti/log/

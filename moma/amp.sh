@@ -6,7 +6,7 @@ sudo apt -y install apache2
 
 echo -e "##Installing PHP##"
 logger installing PHP
-sudo apt -y install libapache2-mod-php php php-gd php-cli
+sudo apt -y install libapache2-mod-php php php-gd php-cli php-xml php-ldap php-mbstring
 
 echo -e "##Installing MySQL##"
 logger installing MySQL
