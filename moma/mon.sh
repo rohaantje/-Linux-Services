@@ -10,6 +10,8 @@ CactiVersion="1.1.27" 			# Cacti version to be installed
 SettingsVersion="0.71-1" 			# Settings plugin version to be installed
 SyslogVersion="1.22-2"			# Syslog plugin version to be installed
 
+echo "GRANT SELECT ON mysql.time_zone_name TO cacti@localhost IDENTIFIED BY 'cacti';" | mysql -u root -proot mysql
+
 echo -e "##Installing cacti tools##"
 logger installing rrdtool snmp snmpd
 sudo apt -y install rrdtool snmp snmpd
@@ -23,7 +25,9 @@ tar zxvf cacti-$CactiVersion.tar.gz
 mv ./cacti-$CactiVersion/ /var/www/html/cacti/
 mysqladmin -u root -p$MySQLRootPwd create cacti
 echo "GRANT ALL ON cacti.* TO "$MySQLCactiUser"@localhost IDENTIFIED BY '"$MySQLCactiPwd"';" | mysql -u root -p$MySQLRootPwd mysql
+echo "GRANT SELECT ON mysql.time_zone_name TO "$MySQLCactiUser"@localhost IDENTIFIED BY '"$MySQLCactiPwd"';" | mysql -u root -p$MySQLRootPwd mysql
 mysql -u $MySQLCactiUser -p$MySQLCactiPwd cacti < /var/www/html/cacti/cacti.sql
+mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p$MySQLRootPwd mysql
 cd /var/www/html/cacti/include/
 sed -i -e "s/username = 'cactiuser'/username = '"$MySQLCactiUser"'/" config.php
 sed -i -e "s/password = 'cactiuser'/password = '"$MySQLCactiPwd"'/" config.php
