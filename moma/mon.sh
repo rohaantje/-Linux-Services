@@ -16,13 +16,13 @@ sudo apt -y install rrdtool snmp snmpd
 
 echo -e "##Installing cacti##"
 logger installing cacti
-apt-get install rrdtool snmp snmpd php5-snmp -y
+sudo apt -y install rrdtool snmp snmpd php-snmp
 cd /usr/src/
 wget http://www.cacti.net/downloads/cacti-$CactiVersion.tar.gz
 tar zxvf cacti-$CactiVersion.tar.gz
 mv ./cacti-$CactiVersion/ /var/www/html/cacti/
 mysqladmin -u root -p$MySQLRootPwd create cacti
-echo "GRANT ALL ON cacti.* TO $MySQLCactiUser@localhost IDENTIFIED BY '$MySQLCactiPwd';"|mysql -u root -p$MySQLRootPwd mysql
+echo "GRANT ALL ON cacti.* TO "$MySQLCactiUser"@localhost IDENTIFIED BY '"$MySQLCactiPwd"';" | mysql -u root -p$MySQLRootPwd mysql
 mysql -u $MySQLCactiUser -p$MySQLCactiPwd cacti < /var/www/html/cacti/cacti.sql
 cd /var/www/html/cacti/include/
 sed -i -e "s/username = 'cactiuser'/username = '"$MySQLCactiUser"'/" config.php

@@ -14,6 +14,10 @@ echo 'mysql-server mysql-server/root_password password root' | sudo debconf-set-
 echo 'mysql-server mysql-server/root_password_again password root' | sudo debconf-set-selections
 sudo apt -y install mysql-server php-mysql
 
+echo -e "##setting timezones##"
+logger setting timezones##
+sed -i -e "s/\;date.timezone =/date.timezone = Europe\/Amsterdam/g" /etc/php/7.0/apache2/php.ini
+
 echo -e "##restart apache2##"
 logger restart apache2
 /etc/init.d/apache2 restart
