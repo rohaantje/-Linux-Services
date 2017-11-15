@@ -1,3 +1,3 @@
-snmp:
+syslog-ng:
     pkg.installed: []
 	service.running
