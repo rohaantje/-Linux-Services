@@ -10,8 +10,8 @@ echo -e "##clone git and enter dir##"
 logger clone git and enter dir
 git clone https://github.com/rohaantje/-Linux-Services.git
 cd ./-Linux-Services
-rmdir /moma
-rmdir /state
+rm -rf /moma
+rm -rf /state
 cd /minion
 
 echo -e "##running install scripts##"
