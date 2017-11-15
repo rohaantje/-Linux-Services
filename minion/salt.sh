@@ -13,5 +13,6 @@ sed -i "s/#master: salt/master: 10.4.1.25/g"  /etc/salt/minion
 
 echo -e "##starting service##"
 logger starting services
+service salt-minion start
 service salt-minion restart
 
