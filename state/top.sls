@@ -1,5 +1,5 @@
 base:
     '*':
-	 - apache
-	 - snmp
-	 - syslog-ng
+     - apache
+     - snmp
+     - syslog-ng
