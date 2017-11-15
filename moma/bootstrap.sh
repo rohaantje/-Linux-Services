@@ -10,7 +10,6 @@ echo -e "##clone git and enter dir##"
 logger clone git and enter dir
 git clone https://github.com/rohaantje/-Linux-Services.git
 cd ./-Linux-Services/
-rmdir /minion
 mv state /srv/salt/
 cd /moma
 

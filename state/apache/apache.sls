@@ -1,2 +1,4 @@
-apache:
-    pkg.installed
+apache2:
+    pkg.installed: []
+	service.running
+	
