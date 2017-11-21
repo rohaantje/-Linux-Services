@@ -27,6 +27,11 @@ apache2:
     - enable: True
     - reload: True
 
+get_wordpress:
+  cmd.run:
+    - name: 'wget http://wordpress.org/latest.tar.gz && tar xvzf latest.tar.gz'
+    - cwd: /var/www/html/
+
 get_wp-cli:
   cmd.run:
     - name: 'curl -sS https://raw.github.com/wp-cli/wp-cli.github.com/master/installer.sh | bash'
@@ -47,11 +52,6 @@ install_wordpress:
   cmd.run:
     - cwd: /var/www/html/wordpress/
     - name: '/usr/local/bin/wp core install --url=http://145.37.234.141/wordpress --title=development --admin_user=admin --admin_password=password --admin_email=root@localhost' 
-
-wordpress:
-  cmd.run:
-    - name: 'wget http://wordpress.org/latest.tar.gz && tar xvzf latest.tar.gz'
-    - creates: /tmp/wp
 
 #Set ownership of WP dir to current user
 /var/www/html:
