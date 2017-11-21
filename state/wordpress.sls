@@ -12,19 +12,15 @@ wordpress_db:
 	- host: '%'
 
 #Installs other dependancies
-
-php-curl:
-  pkg.installed: []
-php-gd:
-  pkg.installed: []
-php-mbstring:
-  pkg.installed: []
-php-mcrypt:
-  pkg.installed: []
-php-xml:
-  pkg.installed: []
-php-xmlrpc:
-  pkg.installed: []
+php:
+  pkg.installed:
+    - pkgs:
+      - php-curl
+      - php-gd
+      - php-mbstring
+      - php-mcrypt
+      - php-xml
+      - php-xmlrpc
   
 apache2:
   service.running:
