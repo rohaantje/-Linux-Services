@@ -9,7 +9,7 @@ wordpress_db:
     - database: wordpress.*
     - grant: ALL PRIVILEGES
     - user: wordpress
-	- host: '%'
+    - host: '%'
 
 #Installs other dependancies
 php:
@@ -21,12 +21,12 @@ php:
       - php-mcrypt
       - php-xml
       - php-xmlrpc
-  
+
 apache2:
   service.running:
     - enable: True
     - reload: True
-	
+
 get_wp-cli:
   cmd.run:
     - name: 'curl -sS https://raw.github.com/wp-cli/wp-cli.github.com/master/installer.sh | bash'
