@@ -46,7 +46,7 @@ config_wordpress:
 install_wordpress:
   cmd.run:
     - cwd: /var/www/html/wordpress/
-    - name: '/usr/local/bin/wp core install --url=http://{{ grains['fqdn_ipv4'] }}/wordpress --title=development --admin_user=admin --admin_password=password --admin_email=root@localhost' 
+    - name: '/usr/local/bin/wp core install --url=http://145.37.234.141/wordpress --title=development --admin_user=admin --admin_password=password --admin_email=root@localhost' 
 
 wordpress:
   cmd.run:
