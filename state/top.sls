@@ -1,5 +1,6 @@
 base:
     '*':
-     - apache
-     - snmp
-     - syslog-ng
+      - snmp
+      - syslog-ng
+	  - lamp
+	  - wordpress

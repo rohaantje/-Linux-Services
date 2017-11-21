@@ -1,3 +1,2 @@
 snmp:
-    pkg.installed: []
-	service.running
+  pkg.installed: []

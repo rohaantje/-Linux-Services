@@ -11,7 +11,7 @@ logger clone git and enter dir
 git clone https://github.com/rohaantje/-Linux-Services.git
 cd ./-Linux-Services/
 mv state /srv/salt/
-cd /moma
+cd moma
 
 echo -e "##running install scripts##"
 logger running install scripts
