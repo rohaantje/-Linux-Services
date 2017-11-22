@@ -1,2 +1,2 @@
-snmp:
+snmpd:
   pkg.installed: []
