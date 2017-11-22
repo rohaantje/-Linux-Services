@@ -1,15 +1,15 @@
 # This block creates the wordpress database, user and sets user access. 
-wordpress_db:
-  mysql_database.present:
-    - name: wordpress
-  mysql_user.present:
-    - name: wordpress
-    - password: password
-  mysql_grants.present:
-    - database: wordpress.*
-    - grant: ALL PRIVILEGES
-    - user: wordpress
-    - host: '%'
+#wordpress_db:
+#  mysql_database.present:
+#    - name: wordpress
+#  mysql_user.present:
+#    - name: wordpress
+#    - password: password
+#  mysql_grants.present:
+#    - database: wordpress.*
+#    - grant: ALL PRIVILEGES
+#    - user: wordpress
+#    - host: '%'
 
 #Installs other dependancies
 php:
@@ -34,7 +34,7 @@ get_wordpress:
 
 get_wp-cli:
   cmd.run:
-    - name: 'curl -sS https://raw.github.com/wp-cli/wp-cli.github.com/master/installer.sh | bash'
+    - name: 'curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar'
     - cwd: /home/vagrant/
     - user: vagrant
 

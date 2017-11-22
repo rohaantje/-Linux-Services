@@ -18,3 +18,6 @@ cd minion
 echo -e "##running install scripts##"
 logger running install scripts
 bash salt.sh
+
+echo -e "##Installation Complete, Server Ready##"
+logger installation complete, Server Ready
