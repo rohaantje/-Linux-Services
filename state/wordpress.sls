@@ -9,11 +9,6 @@ php:
       - php-xml
       - php-xmlrpc
 
-apache2:
-  service.running:
-    - enable: True
-    - reload: True
-
 get_wordpress:
   cmd.run:
     - name: 'wget http://wordpress.org/latest.tar.gz && tar xvzf latest.tar.gz'
@@ -31,4 +26,5 @@ get_wordpress:
 
 apache2:
   service.running:
+    - enable: True
     - reload: True
