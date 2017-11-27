@@ -28,3 +28,7 @@ get_wordpress:
     - recurse:
       - user
       - group
+
+apache2:
+  service.running:
+    - reload: True
