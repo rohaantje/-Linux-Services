@@ -26,5 +26,4 @@ get_wordpress:
 
 apache2:
   service.running:
-    - enable: True
     - reload: True
