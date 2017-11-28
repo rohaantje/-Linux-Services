@@ -12,16 +12,16 @@ php:
 wordpress_db:
   mysql_user.present:
     - connection_user: root
-    - connection_pass: ''
+    - connection_pass: root
     - name: wordpress
     - password: password
   mysql_database.present:
     - connection_user: root
-    - connection_pass: ''
+    - connection_pass: root
     - name: wordpress
   mysql_grants.present:
     - connection_user: root
-    - connection_pass: ''
+    - connection_pass: root
     - database: wordpress.*
     - grant: ALL PRIVILEGES
     - user: wordpress
